@@ -1,0 +1,39 @@
+{
+  "name": "thesis-project",
+  "version": "1.0.0",
+  "description": "Fitomo File Uploader Service",
+  "author": "Fitomo",
+  "scripts": {
+    "start": "nodemon server/server.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fitomo/File-Uploader.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fitomo/File-Uploader/issues"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "eslint": "^2.13.1",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
