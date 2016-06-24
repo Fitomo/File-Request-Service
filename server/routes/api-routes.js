@@ -1,5 +1,5 @@
-const UploadController = require('./../controllers/UploadController');
+const { uploadFile } = require('./../controllers/UploadController');
 
 module.exports = (app) => {
-  app.post('/api/upload', UploadController.uploadFile);
+  app.post('/api/upload', uploadFile);
 };

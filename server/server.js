@@ -5,10 +5,10 @@ const app = express();
 const http = require('http').Server(app);
 
 // Initial Configuration
-require('./config/initialize.js')(app);
+require('./config/initialize')(app);
 
 // API Routes
-require('./routes/api-routes.js')(app);
+require('./routes/api-routes')(app);
 
 app.get('/', (req, res) => {
   res.send('hello, world');
