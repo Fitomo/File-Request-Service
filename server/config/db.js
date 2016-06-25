@@ -10,8 +10,8 @@ db.knex.schema.hasTable('urls').then((exists) => {
   if (!exists) {
     db.knex.schema.createTable('urls', (url) => {
       url.increments('id').primary();
+      url.string('url', 255).unique();
       url.integer('userId');
-      url.string('url', 255);
       url.timestamps();
     }).then((table) => {
       console.log('Created Table urls:', table);

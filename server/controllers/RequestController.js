@@ -4,6 +4,7 @@ AWS.config.loadFromPath(configPath);
 const s3 = new AWS.S3();
 const fs = require('fs');
 const formidable = require('formidable');
+const { insertUrlToDB } = require('../helpers/insertUrlToDB');
 
 module.exports = {
   uploadFile: (req, res) => {
@@ -26,6 +27,8 @@ module.exports = {
         } else {
           console.log('Upload succeeded ---->\n', data);
           result = 'Upload succeeded';
+          // save uploaded url to the database
+          insertUrlToDB(data.Location, undefined);
         }
         res.send(result);
       });

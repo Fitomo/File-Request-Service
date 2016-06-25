@@ -1,5 +1,5 @@
 const db = require('../config/db');
-const Url = db.model.extend({
+const Url = db.Model.extend({
   tableName: 'urls',
   hasTimestamps: true,
 });
