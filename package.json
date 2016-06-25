@@ -32,10 +32,12 @@
   "dependencies": {
     "aws-sdk": "^2.4.2",
     "body-parser": "^1.15.2",
+    "bookshelf": "^0.9.5",
     "cors": "^2.7.1",
     "eslint": "^2.13.1",
     "express": "^4.14.0",
     "formidable": "^1.0.17",
+    "knex": "^0.11.7",
     "morgan": "^1.7.0"
   }
 }

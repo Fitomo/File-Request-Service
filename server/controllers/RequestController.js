@@ -9,12 +9,14 @@ module.exports = {
   uploadFile: (req, res) => {
     const form = new formidable.IncomingForm();
     form.parse(req, (formError, fields, files) => {
-      const { name, path } = files.file;
+      console.log(files);
+      const { name, path, type } = files.file;
       const params = {
         Bucket: 'fitomo',
         ACL: 'public-read',
-        Key: name,
+        Key: `images/${name}`,
         Body: fs.createReadStream(path),
+        ContentType: type,
       };
       s3.upload(params, (s3Error, data) => {
         let result = '';
@@ -23,10 +25,12 @@ module.exports = {
           result = 'Upload failed. See the console for more information';
         } else {
           console.log('Upload succeeded ---->\n', data);
-          result = `<img src="${data.Location}">`;
+          result = 'Upload succeeded';
         }
-        res.send(`${result}`);
+        res.send(result);
       });
     });
+  },
+  downloadFiles: (req, res) => {
   },
 };
