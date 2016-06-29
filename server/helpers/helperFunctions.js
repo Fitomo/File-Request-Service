@@ -1,7 +1,7 @@
 const Url = require('../models/UrlModel');
 
 module.exports = {
-  insertUrlToDB: (url, userId = 15) => {
+  insertUrlToDB: (url, userId) => {
     new Url({ userId, url }).save().then((newUrl) => console.log('url saved!\n', newUrl));
   },
 };
