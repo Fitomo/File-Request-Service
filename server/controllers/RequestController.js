@@ -36,14 +36,11 @@ module.exports = {
   },
   downloadFiles: (req, res) => {
     const userId = parseInt(req.query.userId, 10);
-    console.log('userId ----->', userId);
+    console.log('userId ----------------------->', userId);
     Url.where({ userId }).fetchAll().then(({ models }) => {
       const urls = [];
       models.forEach(({ attributes }) => {
-        urls.push({
-          url: attributes.url,
-          createdAt: attributes.created_at,
-        });
+        urls.push({ url: attributes.url, createdAt: attributes.created_at });
       });
       res.send(urls);
     });
