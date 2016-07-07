@@ -2,14 +2,14 @@ require('babel-register');
 
 const express = require('express');
 const app = express();
-const environment = require('dotenv');
+// const environment = require('dotenv');
 const http = require('http').Server(app);
 
-if (process.env.NODE_ENV === 'development') {
-  environment.config({ path: './env/development.env' });
-} else if (process.env.NODE_ENV === 'production') {
-  environment.config({ path: './env/production.env' });
-}
+// if (process.env.NODE_ENV === 'development') {
+//   environment.config({ path: './env/development.env' });
+// } else if (process.env.NODE_ENV === 'production') {
+//   environment.config({ path: './env/production.env' });
+// }
 
 // Initial Configuration & API Routes
 require('./config/initialize')(app);
