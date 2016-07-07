@@ -2,3 +2,4 @@
 node_modules/
 server/config/aws-config.json
 server/config/db-config.js
+env/

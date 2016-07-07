@@ -1,6 +1,8 @@
 const AWS = require('aws-sdk');
-const configPath = require('path').join(__dirname, '../config/aws-config.json');
+const configPath = require('path').join(__dirname, '../config/aws-config.json'); 
 AWS.config.loadFromPath(configPath);
+// AWS.config.update({region: 'us-west-2'});
+
 const s3 = new AWS.S3();
 const fs = require('fs');
 const formidable = require('formidable');
@@ -36,7 +38,7 @@ module.exports = {
   },
   downloadFiles: (req, res) => {
     const userId = parseInt(req.query.userId, 10);
-    console.log('userId ----------------------->', userId);
+    console.log('userId ---->', userId);
     Url.where({ userId }).fetchAll().then(({ models }) => {
       const urls = [];
       models.forEach(({ attributes }) => {
